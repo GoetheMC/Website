@@ -9,9 +9,9 @@ export default function ServerStatus() {
   // Braucht fetching von API
   const serverStatus = {
     //Beispiel
-    online: true,
-    players: 2,
-    maxPlayers: 100,
+    online: ,
+    players: ,
+    maxPlayers: ,
     tps: 20,
   };
 
