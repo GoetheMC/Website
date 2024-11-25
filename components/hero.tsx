@@ -2,9 +2,37 @@
 
 import { motion } from "framer-motion";
 import { Copy, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import Image from "next/image";
+
+const images = [
+  {
+    url: "https://i.imgur.com/ZuoZsda.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+  {
+    url: "https://i.imgur.com/ktjUqfq.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+  {
+    url: "https://i.imgur.com/3iVgjHt.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+  {
+    url: "https://i.imgur.com/KNrfl6T.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+  {
+    url: "https://i.imgur.com/V5F6iGj.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+  {
+    url: "https://i.imgur.com/2UFjaDm.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+];
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -17,9 +45,19 @@ export default function Hero() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  // Select a random image from the gallery
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 px-4">
-      <div className="text-center space-y-8 max-w-4xl">
+    <section className="min-h-screen flex items-center justify-center pt-16 px-4 relative">
+      <Image
+        src={randomImage.url}
+        alt={randomImage.alt}
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 z-0"
+      />
+      <div className="text-center space-y-8 max-w-4xl relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
