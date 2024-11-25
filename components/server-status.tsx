@@ -5,7 +5,6 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 
 export default function ServerStatus() {
   const [serverStatus, setServerStatus] = useState({
@@ -58,38 +57,18 @@ export default function ServerStatus() {
                           ? "bg-green-500 animate-pulse"
                           : "bg-red-500"
                       }`}
-                    />
-                    <span className="text-muted-foreground">
-                      {serverStatus.online ? "Online" : "Offline"}
-                    </span>
+                    ></div>
+                    <span>{serverStatus.online ? "Online" : "Offline"}</span>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-8">
-                  <div className="text-center">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Users className="h-5 w-5 text-primary" />
-                      <span className="text-xl font-bold">
-                        {serverStatus.players}/{serverStatus.maxPlayers}
-                      </span>
-                    </div>
-                    <Progress
-                      value={
-                        (serverStatus.players / serverStatus.maxPlayers) * 100
-                      }
-                      className="w-32"
-                    />
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Spieler Online
-                    </p>
-                  </div>
-
-                  <div className="text-center">
-                    <span className="text-xl font-bold block mb-2">
-                      {serverStatus.tps}
-                    </span>
-                    <p className="text-sm text-muted-foreground">TPS</p>
-                  </div>
+                <div className="flex flex-col items-center">
+                  <Users className="inline-block mr-2" />
+                  <span>
+                    {serverStatus.players}/{serverStatus.maxPlayers} Players
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="font-semibold">TPS:</span> {serverStatus.tps}
                 </div>
               </div>
             </CardContent>
