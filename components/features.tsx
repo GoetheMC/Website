@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Users, Sword, Map, AudioLines } from "lucide-react";
+import { Shield, Users, Sword, Map, MessageSquareText } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -29,9 +29,10 @@ const features = [
       "Eigen Programmierte Plugins, welche von Schülern entwickelt wurden",
   },
   {
-    icon: AudioLines,
-    title: "Ingame Voicechat",
-    description: "Ihr könnt euch mit anderen Spielern im Voicechat unterhalten",
+    icon: MessageSquareText,
+    title: "Discord",
+    description:
+      "Ihr könnt euch mit anderen Spielern im Voicechat und oder im Textchat unterhalten",
   },
 ];
 
