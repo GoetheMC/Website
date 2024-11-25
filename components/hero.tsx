@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import Image from "next/image";
+import GoetheLogo from "@/public/Goethe Logo.webp";
 
 const images = [
   {
@@ -28,30 +29,6 @@ const images = [
     url: "https://i.imgur.com/V5F6iGj.jpg",
     alt: "Muss noch was hinzugefügt werden",
   },
-  {
-    url: "https://i.imgur.com/2UFjaDm.jpg",
-    alt: "Muss noch was hinzugefügt werden",
-  },
-  {
-    url: "https://imgur.com/kMDjvCj.jpg",
-    alt: "New Image 1",
-  },
-  {
-    url: "https://imgur.com/cmK1cbN.jpg",
-    alt: "New Image 2",
-  },
-  {
-    url: "https://imgur.com/TNCNjDe.jpg",
-    alt: "New Image 3",
-  },
-  {
-    url: "https://imgur.com/QlQhmaY.jpg",
-    alt: "New Image 4",
-  },
-  {
-    url: "https://imgur.com/iCBuhg4.jpg",
-    alt: "New Image 5",
-  },
 ];
 
 export default function Hero() {
@@ -71,6 +48,13 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 px-4 relative">
       <Image
+        src={GoetheLogo}
+        alt="GoetheMC Logo"
+        width={100}
+        height={100}
+        className="absolute top-4 left-4 z-10"
+      />
+      <Image
         src={randomImage.url}
         alt={randomImage.alt}
         layout="fill"
@@ -87,7 +71,6 @@ export default function Hero() {
         >
           Willkommen bei GoetheMC
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,7 +79,6 @@ export default function Hero() {
         >
           Tritt uns noch heute bei!
         </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +105,6 @@ export default function Hero() {
             Klicken Sie auf die Schaltfläche, um die Server-IP zu kopieren
           </p>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
