@@ -40,8 +40,9 @@ export default function Navbar() {
               <Image
                 src={GoetheLogo}
                 alt="GoetheMC Logo"
-                width={60}
-                height={60}
+                width={100}
+                height={100}
+                className={isScrolled ? "invert" : ""}
               />
             </a>
           </div>
