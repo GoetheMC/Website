@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Copy, CheckCircle2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import Image from "next/image";
@@ -57,6 +57,7 @@ export default function Hero() {
         objectFit="cover"
         className="absolute inset-0 z-0"
       />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md z-0"></div>
       <div className="text-center space-y-8 max-w-4xl relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
