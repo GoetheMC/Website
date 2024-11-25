@@ -131,7 +131,7 @@ export default function Hero() {
           className="flex flex-wrap justify-center gap-4 mt-8"
         >
           <Button size="lg" asChild>
-            <a href="#features">Features erkündigen</a>
+            <a href="#features">Features erkunden</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href="#discord">Discord joinen</a>

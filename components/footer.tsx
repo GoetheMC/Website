@@ -45,7 +45,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Verbinden</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/your-repo"
+                href="https://github.com/GoetheMC"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
