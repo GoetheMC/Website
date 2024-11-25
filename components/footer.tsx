@@ -42,7 +42,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Verbinden</h3>
+            <h3 className="text-lg font-semibold mb-4">Code ansehen</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/GoetheMC"
