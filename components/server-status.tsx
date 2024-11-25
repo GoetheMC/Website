@@ -1,19 +1,41 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
 export default function ServerStatus() {
-  // Braucht fetching von API
-  const serverStatus = {
-    //Beispiel
-    online: ,
-    players: ,
-    maxPlayers: ,
+  const [serverStatus, setServerStatus] = useState({
+    online: false,
+    players: 0,
+    maxPlayers: 0,
     tps: 20,
-  };
+  });
+
+  useEffect(() => {
+    async function fetchServerStatus() {
+      try {
+        const response = await axios.get(
+          "https://api.mcstatus.io/v2/status/java/b-sz-ggyl.logoip.de:25577"
+        );
+        const data = response.data;
+
+        setServerStatus({
+          online: data.online,
+          players: data.players.online,
+          maxPlayers: data.players.max,
+          tps: data.tps || 20, // Assuming TPS is provided, otherwise default to 20
+        });
+      } catch (error) {
+        console.error("Error fetching server status:", error);
+      }
+    }
+
+    fetchServerStatus();
+  }, []);
 
   return (
     <section id="status" className="py-20 px-4 bg-accent/50">
