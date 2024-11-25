@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Copy, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import Image from "next/image";
@@ -31,9 +31,35 @@ const images = [
   },
 ];
 
+function useBackgroundColor() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkBackgroundColor = () => {
+      const backgroundColor = getComputedStyle(document.body).backgroundColor;
+      const rgb = backgroundColor.match(/\d+/g);
+      if (rgb) {
+        const brightness =
+          (parseInt(rgb[0]) * 299 +
+            parseInt(rgb[1]) * 587 +
+            parseInt(rgb[2]) * 114) /
+          1000;
+        setIsDark(brightness < 128);
+      }
+    };
+
+    checkBackgroundColor();
+    window.addEventListener("resize", checkBackgroundColor);
+    return () => window.removeEventListener("resize", checkBackgroundColor);
+  }, []);
+
+  return isDark;
+}
+
 export default function Hero() {
   const [copied, setCopied] = useState(false);
   const serverIP = "b-sz-ggyl.logoip.de:25577";
+  const isDark = useBackgroundColor();
 
   const copyIP = () => {
     navigator.clipboard.writeText(serverIP);
@@ -52,7 +78,7 @@ export default function Hero() {
         alt="GoetheMC Logo"
         width={100}
         height={100}
-        className="absolute top-4 left-4 z-10"
+        className={`absolute top-4 left-4 z-10 ${isDark ? "invert" : ""}`}
       />
       <Image
         src={randomImage.url}
