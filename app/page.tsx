@@ -25,6 +25,7 @@ export default function Home() {
         <meta property="og:image" content="/public/OG-Image.png" />
         <meta property="og:url" content="https://goethemc.zacklack.de" />
         <meta property="og:type" content="website" />
+        <meta property="og:logo" content="/public/favicon.png" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
