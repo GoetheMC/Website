@@ -29,6 +29,30 @@ const images = [
     url: "https://i.imgur.com/V5F6iGj.jpg",
     alt: "Muss noch was hinzugefügt werden",
   },
+  {
+    url: "https://i.imgur.com/2UFjaDm.jpg",
+    alt: "Muss noch was hinzugefügt werden",
+  },
+  {
+    url: "https://imgur.com/kMDjvCj.jpg",
+    alt: "New Image 1",
+  },
+  {
+    url: "https://imgur.com/cmK1cbN.jpg",
+    alt: "New Image 2",
+  },
+  {
+    url: "https://imgur.com/TNCNjDe.jpg",
+    alt: "New Image 3",
+  },
+  {
+    url: "https://imgur.com/QlQhmaY.jpg",
+    alt: "New Image 4",
+  },
+  {
+    url: "https://imgur.com/iCBuhg4.jpg",
+    alt: "New Image 5",
+  },
 ];
 
 function useBackgroundColor() {
