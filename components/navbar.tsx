@@ -99,14 +99,14 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-background/95 backdrop-blur-md"
+          className="md:hidden bg-background/80 backdrop-blur-md"
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="block text-muted-foreground hover:text-primary transition-colors"
               >
                 {item.name}
               </a>
