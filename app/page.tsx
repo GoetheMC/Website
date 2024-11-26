@@ -22,7 +22,7 @@ export default function Home() {
           property="og:description"
           content="Trete noch heute dem GoetheMC bei!"
         />
-        <meta property="og:image" content="https://i.imgur.com/hZxR842.png" />
+        <meta property="og:image" content="/public/OG-Image.png" />
         <meta property="og:url" content="https://goethemc.zacklack.de" />
         <meta property="og:type" content="website" />
 
@@ -33,7 +33,7 @@ export default function Home() {
           name="twitter:description"
           content="Trete noch heute dem GoetheMC bei!"
         />
-        <meta name="twitter:image" content="https://i.imgur.com/hZxR842.png" />
+        <meta name="twitter:image" content="/public/OG-Image.png" />
         <meta name="twitter:url" content="https://goethemc.zacklack.de" />
       </Head>
       <main className="min-h-screen bg-gradient-to-b from-background to-accent">
