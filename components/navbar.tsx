@@ -29,7 +29,13 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home", icon: Home },
+    {
+      name: "Home",
+      href: "https://ggl.schule",
+      icon: Home,
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
     { name: "Funktionen", href: "#features", icon: Info },
     { name: "Galerie", href: "#gallery", icon: ImageIcon },
     { name: "Regeln", href: "#rules", icon: Book },
@@ -64,6 +70,8 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
+                target={item.target}
+                rel={item.rel}
                 className="flex items-center text-muted-foreground hover:text-primary transition-colors"
               >
                 <item.icon className="h-5 w-5 mr-2" />
@@ -124,6 +132,8 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
+                target={item.target}
+                rel={item.rel}
                 className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
