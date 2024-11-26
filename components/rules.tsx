@@ -10,81 +10,86 @@ import {
 
 const rules = [
   {
-    title: "§1 Allgemeine Regeln",
+    title: "§1 Allgemein",
     content: `
 1. Regeln unter dem Reiter „Allgemein“ sind auf alle Aspekte des Servers zu beziehen.
-2. Mit dem Beitreten des Servers akzeptiert jeder Spieler / jede Spielerin die Regeln und verpflichtet sich diese zu befolgen.
+2. Mit dem Beitreten des Servers akzeptiert jeder Spieler / jede Spielerin die Regeln und verpflichtet sich diese zu befolgen. 
 3. Jegliche Formen von Hacks oder Bug-Abusing sind untersagt.
     `,
   },
   {
     title: "§1.1 Chat-Regeln",
     content: `
-1. Jeder hat das Recht, im Chat teilzunehmen, solange folgende Kriterien befolgt werden:
-   - Beleidigungen sind unter keinen Umständen akzeptiert und werden nie als Spaß wahrgenommen.
-   - Jegliche Form von Diskriminierung wird nicht toleriert (bspw. Rassismus, Antisemitismus, Mobbing usw.).
-   - Mehrfaches Senden derselben oder ähnlicher Nachrichten in kurzer Zeit ist untersagt.
-   - Spam wird nicht geduldet.
-2. Nachrichten dürfen keine Themen wie Drogen, Sex, Gewalt, Hass oder Politik beinhalten.
-3. Teammitglieder können verlangen, dass Chat-Themen geändert werden; diesen Anweisungen ist Folge zu leisten.
-4. Links zu NSFW- oder diskriminierenden Inhalten sowie Scams sind verboten.
-5. Werbung und Nötigung anderer Spieler sind nicht erlaubt.
-6. Falschinformationen dürfen nicht verbreitet werden.
+1.	Jede*r hat das Recht im Chat teilzunehmen, solange folgende Kriterien befolgt werden.
+2.	Beleidigungen sind unter keinen Umständen akzeptiert und werden nie als Spaß wahrgenommen.
+3.	Jegliche Form von Diskriminierung wird nicht toleriert. (darunter bspw. Rassismus, Antisemitismus, Mobbing usw…)
+4.	Das mehrfache Senden der gleichen oder ähnlicher Nachrichten in einem kurzen Zeitraum ist untersagt.
+5.	Jeglicher Spam wird nicht geduldet.
+6.	Nachrichten sollten keine Themen wie Drogen, Sex, Gewalt, Hass oder Politik beinhalten.
+7.	Wenn ein Teammitglied (spricht Admin, Owner, Builder oder Dev) dich darum bittet die Themen deiner Chatbeiträge zu ändern, hast du dieser Bitte zu folgen. 
+8.	Das Senden von Links die zu einer Seite führt die NSFW oder diskriminierende Inhalte zeigt oder anbietet oder die zum Scam ihrer Nutzer dient ist nicht gestattet.
+9.	Jegliche Formen der Werbung sind verboten.
+10.	Das Nötigen eines anderen Spielers etwas zu tun ist nicht erlaubt.
+11.	Das Verbreiten von jeglichen Falschinformationen ist untersagt.
     `,
   },
   {
-    title: "§1.2 Beitrittsberechtigung",
+    title: "§1.2 Beitrittsberechtigung:",
     content: `
-1. Nur Schüler*innen und ehemalige Schüler*innen des Goethe-Gymnasium-Lichterfelde haben das Recht, den Server zu nutzen.
-2. Die Weitergabe der Server-IP an schulfremde Personen ist strengstens untersagt.
-3. Teammitglieder dürfen bei Verdacht Nachweise wie Schülerausweise verlangen. Wer dies nicht erbringen kann, riskiert einen Bann.
-4. Auf Anfrage kann über die Spielberechtigung schulfremder Personen entschieden werden.
+1.	Alle Schüler*innen und ehemalige Schüler*innen des Goethe-Gymnasium-Lichterfelde haben das Recht unter Einhaltung der Regeln auf dem GoetheMC Server zu spielen.
+2.	Niemand hat das Recht die IP-Adresse des Goethe Schulservers an schulfremde Personen weiterzugeben. 
+3.	Wenn ein Teammitglied (spricht Admin, Owner, Builder oder Dev) dir suspekt gegenüber ist, ob du ein (ehemaliger) Schüler oder eine (ehemalige) Schülerin des Goethe-Gymnasiums-Lichterfelde ist hat er das Recht dich nach einem Nachweis zu fragen, wie bspw. Schülerausweis, schul E-Mail, SchulCloud account usw… Ist man nicht in der Lage nachzuweisen das man der Schule angehört ist mit einem Ban zu rechnen. 
+4.	Bei persönlicher Anfrage an das Serverteam kann über eine Spielberechtigung einer schulfremden Person nachgedacht werden.
+
     `,
   },
   {
     title: "§1.3 Konsequenzen",
     content: `
-1. Das Serverteam hat das Recht, Spieler bei Regelverstößen zu kicken oder zu bannen, auch ohne ausführliche Begründung.
-2. Bann-Dauern sind individuell und basieren auf der Schwere des Verstoßes.
-3. Spieler haben das Recht, nach einem Grund für einen Bann zu fragen und Entbannungsanträge zu stellen.
-4. Bei kleineren Verstößen gegen Chat-Regeln kann ein Chat-Bann ausgesprochen werden.
+1.	Bei Missachtung einer oder mehreren Regeln hat das Serverteam ohne eine ausführliche Begründung jederzeit das Recht den Nutzern von dem kompletten Server zu bannen oder zu kicken.
+2.	Die Dauer eines Bans ist vorher nicht festgelegt und kann individuell von dem Teammitglied basierend auf der Tat entschieden werden. 
+3.	Jeder Spieler / jede Spielerin hat das Recht nach einem ausführlicheren Grund im Fall eines Bannes zu fragen. 
+4.	Jeder Spieler / jede Spielerin hat das Recht im Fall eines Bannes einen Entbannungsantrag zu stellen. 
+5.	Mitglieder des Serverteams dürfen sich kurzzeitig vorbehalten Spieler bei Verdacht eines Regelverstoßes oder bei einer individuellen Einschätzung der „Tat“ welche ggf. nicht im Regelwerk aufgeführt ist zu bannen oder zu kicken. 
+6.	Bei einer nicht so gravierenden Missachtung der Chat-Regeln kann mit einem Chat Bann zu rechnen sein, ein Bann vom Netzwerk ist jedoch nicht auszuschließen. 
     `,
   },
   {
-    title: "§2 Regeln für den Survival-Server (SMP)",
+    title: "§2 Regeln für den Survival-Server",
     content: `
-1. Die Regeln unter „SMP“ gelten für alle Aspekte des Survival-Bereichs des Servers.
-2. Beim Beschriften von Schildern, Benennen von Gegenständen oder Erstellen von Schriftzügen gelten die Chat-Regeln.
+1.	Regeln unter dem Reiter „SMP“ sind auf alle Aspekte des Survival Bereichs des Servers zu beziehen. 
+2.	Bei dem Beschriften von Schildern, Benennen von Gegenständen oder dem Bauen von Schriftzügen gelten die gleichen Regeln wie für den Chat. (dies gilt ebenfalls für den PVP-Sektor des Servers)
     `,
   },
   {
     title: "§2.1 Bauen",
     content: `
-1. Diskriminierende Symbole, Orte oder Gebäude sind untersagt.
-2. Bauwerke dürfen keine Themen wie Drogen, Sex, Gewalt, Hass oder Politik darstellen.
-3. Das Nachbilden tragischer Ereignisse der Geschichte ist verboten.
-4. Bauwerke sollten optisch ansprechend sein; riesige Netherrack-Würfel o.Ä. sind nicht erlaubt.
-5. Bauwerke, die andere Spieler stören sollen, sind untersagt.
-6. Lags verursachende Gebilde sind verboten.
-7. Die Landschaft in Spawn-Nähe darf nicht verunstaltet werden.
-8. Andere Grundstücke dürfen nicht bebaut, abgebaut oder beschädigt werden.
+1.	Die Regeln unter dem Reiter „Bauen“ gelten ebenfalls für den PVP-Sektor des Servers.
+2.	Kein Spieler darf Symbole, Orte oder Gebäude Bauen, welche als diskriminierend wahrgenommen werden können.
+3.	Kein Spieler darf etwas bauen, was etwas mit Drogen, Sex, Gewalt, Hass oder Politik zu tun hat. 
+4.	Das Bauen von tragischen Ereignissen der Geschichte ist untersagt. 
+5.	Jedem Bauwerk sollte irgendwie ein Maß von Schönheit abgewonnen werden können (heißt es ist untersagt bspw. Riesige Netherrack Würfel zu bauen)
+6.	Ein Bauwerk was den alleinigen Grund hat, anderen Spieler zu nerven, ist untersagt.
+7.	Das Bauen von jeglichen Lags verursachenden Gebilden ist verboten.
+8.	Eine Verunstaltung der Landschaft in der Nähe des Spawnes wird nicht geduldet.
+9.	Das bebauen / abbauen oder verunstalten von anderen Grundstücken ist nicht erlaubt.
     `,
   },
   {
     title: "§2.2 PVP",
     content: `
-1. Spieler dürfen nur mit Zustimmung anderer angegriffen oder getötet werden.
-2. Bei Angriffen darf man sich verteidigen, ohne Zustimmung einholen zu müssen.
-3. Indirektes Töten (z. B. durch Lava oder Schubsen ins Void) ist untersagt.
-4. Tödliche Spawn-Traps sind verboten.
+1.	Man darf andere Spieler nur angreifen oder töten, wenn diese damit einverstanden sind.
+2.	Falls man von einer anderen Person angegriffen wird, darf man diese ebenfalls angreifen, ohne die Erlaubnis dieser Person zu bekommen.
+3.	Man darf keine Spieler indirekt töten, heißt bspw. über das Schupsen ins Void über das Platzieren von Lava usw…
+4.	Jegliche Formen von tödlichen Spawn-Traps sind untersagt.
     `,
   },
   {
     title: "§2.3 Items",
     content: `
-1. Items aus Kisten oder anderen Behältnissen anderer Spieler dürfen nicht entnommen werden.
-2. Gedroppte Items nach einem Tod dürfen nicht beansprucht werden.
-3. Versehentlich gedroppte Items anderer Spieler müssen zurückgegeben werden.
+1.	Man darf unter keinen Umständen Items aus den Kisten / Öfen und anderen Behältnissen von anderen Spielern nehmen.
+2.	Im Falle eines Todes darf man die gedroppten Items des gestorbenen nicht für sich beanspruchen. 
+3.	Man darf keine aus Versehen gedroppte Items eines anderen Spielers behalten. Darunter zählen auch bspw. abgebaute Blöcke. 
     `,
   },
 ];
@@ -100,9 +105,10 @@ export default function Rules() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Server Regeln</h2>
+          <h2 className="text-3xl font-bold mb-4">Server Rules</h2>
           <p className="text-muted-foreground">
-            Folge diesen Regeln, um ein angenehmes Spielerlebnis zu haben
+            Folge diesen Regeln um ein angenehmes Spielerlebniss zu
+            gewährleisten.
           </p>
         </motion.div>
 
@@ -116,7 +122,9 @@ export default function Rules() {
             {rules.map((rule, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger>{rule.title}</AccordionTrigger>
-                <AccordionContent>{rule.content}</AccordionContent>
+                <AccordionContent>
+                  <div className="whitespace-pre-line">{rule.content}</div>
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
