@@ -109,12 +109,23 @@ export default function Navbar() {
           exit={{ opacity: 0, y: -20 }}
           className="fixed inset-0 z-40 bg-background/80 backdrop-blur-md"
         >
+          <div className="absolute top-4 right-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(false)}
+              className="inline-flex items-center justify-center"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setIsOpen(false)}
               >
                 <item.icon className="h-5 w-5 mr-2" />
                 {item.name}
