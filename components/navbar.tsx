@@ -2,7 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Github } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Info,
+  Image as ImageIcon,
+  Book,
+  MessageSquare,
+  Github,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import GoetheLogo from "@/public/Goethe Logo.webp";
@@ -20,11 +29,11 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Funktionen", href: "#features" },
-    { name: "Status", href: "#status" },
-    { name: "Galerie", href: "#gallery" },
-    { name: "Regeln", href: "#rules" },
-    { name: "Discord", href: "#discord" },
+    { name: "Home", href: "#home", icon: Home },
+    { name: "Funktionen", href: "#features", icon: Info },
+    { name: "Galerie", href: "#gallery", icon: ImageIcon },
+    { name: "Regeln", href: "#rules", icon: Book },
+    { name: "Discord", href: "#discord", icon: MessageSquare },
   ];
 
   return (
@@ -43,36 +52,35 @@ export default function Navbar() {
                   alt="GoetheMC Logo"
                   width={100}
                   height={100}
-                  className={isScrolled ? "invert" : ""}
+                  className="invert"
                 />
               </a>
             )}
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
-              <Button variant="outline" size="sm" asChild>
-                <a
-                  href="https://github.com/GoetheMC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
-              </Button>
-            </div>
+          <div className="hidden md:flex items-center space-x-4">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+              >
+                <item.icon className="h-5 w-5 mr-2" />
+                {item.name}
+              </a>
+            ))}
+            <Button variant="outline" size="sm" asChild>
+              <a
+                href="https://github.com/GoetheMC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Github className="h-4 w-4" />
+                GitHub
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -99,15 +107,16 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-background/80 backdrop-blur-md"
+          className="fixed inset-0 z-40 bg-background/80 backdrop-blur-md"
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center text-muted-foreground hover:text-primary transition-colors"
               >
+                <item.icon className="h-5 w-5 mr-2" />
                 {item.name}
               </a>
             ))}
