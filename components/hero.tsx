@@ -110,7 +110,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 px-4 relative">
+    <section className="min-h-screen flex items-center justify-center pt-16 px-4 md:px-8 lg:px-16 relative">
       <Image
         src={GoetheLogo}
         alt="GoetheMC Logo"
@@ -126,7 +126,7 @@ export default function Hero() {
         className="absolute inset-0 z-0"
       />
       <div className="absolute inset-0 bg-black/60 backdrop-blur-md z-0"></div>
-      <div className="text-center space-y-8 max-w-4xl relative z-10">
+      <div className="text-center space-y-8 max-w-4xl relative z-10 px-4 md:px-8 lg:px-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export default function Hero() {
           <p className="text-sm text-muted-foreground">
             Klicken Sie auf die Schaltfläche, um die Server-IP zu kopieren
           </p>
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Button onClick={toggleModal} size="lg" variant="outline">
               Ich nutze Bedrock
             </Button>
