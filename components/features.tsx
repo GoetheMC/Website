@@ -13,7 +13,7 @@ import {
 const features = [
   {
     icon: Shield,
-    title: "Anitcheat",
+    title: "Anticheat",
     description:
       "Ein unfehlbares Anticheat-System, das für ein faires Spielerlebnis sorgt",
   },

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Copy, CheckCircle2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import Image from "next/image";
@@ -55,35 +55,12 @@ const images = [
   },
 ];
 
-function useBackgroundColor() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const checkBackgroundColor = () => {
-      const backgroundColor = getComputedStyle(document.body).backgroundColor;
-      const rgb = backgroundColor.match(/\d+/g);
-      if (rgb) {
-        const brightness =
-          (parseInt(rgb[0]) * 299 +
-            parseInt(rgb[1]) * 587 +
-            parseInt(rgb[2]) * 114) /
-          1000;
-        setIsDark(brightness < 128);
-      }
-    };
-
-    checkBackgroundColor();
-    window.addEventListener("resize", checkBackgroundColor);
-    return () => window.removeEventListener("resize", checkBackgroundColor);
-  }, []);
-
-  return isDark;
-}
-
 export default function Hero() {
   const [copied, setCopied] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const serverIP = "b-sz-ggyl.logoip.de:25577";
-  const isDark = useBackgroundColor();
+  const bedrockIP = "b-sz-ggyl.logoip.de";
+  const bedrockPort = "25577";
 
   const copyIP = () => {
     navigator.clipboard.writeText(serverIP);
@@ -92,7 +69,11 @@ export default function Hero() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Select a random image from the gallery
+  const copyBedrockIP = () => {
+    navigator.clipboard.writeText(`${bedrockIP}:${bedrockPort}`);
+    toast.success("Bedrock IP and Port copied to clipboard!");
+  };
+
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
   return (
@@ -102,7 +83,7 @@ export default function Hero() {
         alt="GoetheMC Logo"
         width={100}
         height={100}
-        className={`absolute top-4 left-4 z-10 ${isDark ? "invert" : ""}`}
+        className="absolute top-4 left-4 z-10"
       />
       <Image
         src={randomImage.url}
@@ -111,31 +92,18 @@ export default function Hero() {
         objectFit="cover"
         className="absolute inset-0 z-0"
       />
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-md z-0"></div>
-      <div className="text-center space-y-8 max-w-4xl relative z-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50"
-        >
-          Willkommen bei GoetheMC
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-xl text-muted-foreground"
-        >
-          Tritt uns noch heute bei!
-        </motion.p>
+      <div className="relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col items-center space-y-4"
+          transition={{ duration: 0.5 }}
+          className="mb-8"
         >
-          <div className="relative group">
+          <h1 className="text-4xl font-bold mb-4">Welcome to GoetheMC</h1>
+          <p className="text-lg mb-4">
+            Join our amazing Minecraft community server!
+          </p>
+          <div className="relative inline-block">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/50 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000"></div>
             <Button
               onClick={copyIP}
@@ -151,14 +119,11 @@ export default function Hero() {
               )}
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Klicken Sie auf die Schaltfläche, um die Server-IP zu kopieren
-          </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mt-8"
         >
           <Button size="lg" asChild>
@@ -167,8 +132,46 @@ export default function Hero() {
           <Button size="lg" variant="outline" asChild>
             <a href="#discord">Discord joinen</a>
           </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => setIsModalOpen(true)}
+          >
+            Ich nutze Bedrock
+          </Button>
         </motion.div>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-black p-8 rounded-lg shadow-lg relative">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              onClick={() => setIsModalOpen(false)}
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl font-bold mb-4">
+              Bedrock Server Information
+            </h2>
+            <p className="mb-2">
+              <strong>IP:</strong> {bedrockIP}
+              <button
+                onClick={copyBedrockIP}
+                className="ml-2 text-blue-500 hover:underline"
+              >
+                <Copy className="inline h-5 w-5" />
+              </button>
+            </p>
+            <p className="mb-4">
+              <strong>Port:</strong> {bedrockPort}
+            </p>
+            <Button variant="outline" onClick={() => setIsModalOpen(false)}>
+              Close
+            </Button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
