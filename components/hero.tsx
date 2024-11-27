@@ -167,22 +167,17 @@ export default function Hero() {
           <p className="text-sm text-muted-foreground">
             Klicken Sie auf die Schaltfläche, um die Server-IP zu kopieren
           </p>
-          <Button onClick={toggleModal} size="lg" variant="outline">
-            Ich nutze Bedrock
-          </Button>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4 mt-8"
-        >
-          <Button size="lg" asChild>
-            <a href="#features">Features erkunden</a>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <a href="#discord">Discord joinen</a>
-          </Button>
+          <div className="flex space-x-4">
+            <Button onClick={toggleModal} size="lg" variant="outline">
+              Ich nutze Bedrock
+            </Button>
+            <Button size="lg" asChild>
+              <a href="#features">Features erkunden</a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="#discord">Discord joinen</a>
+            </Button>
+          </div>
         </motion.div>
       </div>
 
