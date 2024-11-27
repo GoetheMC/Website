@@ -203,7 +203,7 @@ export default function Hero() {
               onClick={toggleModal}
               variant="outline"
               size="lg"
-              className="mt-4"
+              className="mt-4 ml-4"
             >
               Close
             </Button>
