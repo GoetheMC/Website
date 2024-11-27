@@ -83,6 +83,9 @@ function useBackgroundColor() {
 export default function Hero() {
   const [copied, setCopied] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [randomImage, setRandomImage] = useState(
+    images[Math.floor(Math.random() * images.length)]
+  );
   const serverIP = "b-sz-ggyl.logoip.de:25577";
   const bedrockIP = "b-sz-ggyl.logoip.de";
   const bedrockPort = "25577";
@@ -105,8 +108,6 @@ export default function Hero() {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
-  const randomImage = images[Math.floor(Math.random() * images.length)];
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 px-4 relative">
@@ -196,7 +197,7 @@ export default function Hero() {
               <strong>Port:</strong> {bedrockPort}
             </p>
             <Button onClick={copyBedrockIP} variant="outline" size="lg">
-              Copy IP and Port
+              IP und Port kopieren
             </Button>
             <Button
               onClick={toggleModal}
