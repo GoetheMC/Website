@@ -1,6 +1,14 @@
+"use client";
+import { useState } from "react";
 import { Github } from "lucide-react";
 
 export default function Footer() {
+  const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+
+  const toggleHelpModal = () => {
+    setIsHelpModalOpen(!isHelpModalOpen);
+  };
+
   return (
     <footer className="bg-background py-12 px-4">
       <div className="max-w-7xl mx-auto">
@@ -32,12 +40,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:info@zacklack.de"
+                <button
+                  onClick={toggleHelpModal}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Kontakt und Hilfe
-                </a>
+                </button>
               </li>
               <li>
                 <a
@@ -69,6 +77,26 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      {isHelpModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div
+            className="absolute inset-0 bg-black opacity-50"
+            onClick={toggleHelpModal}
+          ></div>
+          <div className="bg-black p-8 rounded-lg shadow-lg z-10">
+            <h2 className="text-2xl font-bold mb-4">
+              Mit was benötigst du Hilfe?
+            </h2>
+            <button
+              onClick={toggleHelpModal}
+              className="mt-4 px-4 py-2 bg-primary text-black rounded-lg"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
