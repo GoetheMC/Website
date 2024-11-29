@@ -33,6 +33,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="mailto:info@zacklack.de"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Kontakt und Hilfe
+                </a>
+              </li>
+              <li>
+                <a
                   href="#discord"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
