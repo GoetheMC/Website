@@ -4,9 +4,15 @@ import { Github } from "lucide-react";
 
 export default function Footer() {
   const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
+  const [isUnbanInfoVisible, setIsUnbanInfoVisible] = useState(false);
 
   const toggleHelpModal = () => {
     setIsHelpModalOpen(!isHelpModalOpen);
+    setIsUnbanInfoVisible(false); // Reset unban info visibility when closing the modal
+  };
+
+  const showUnbanInfo = () => {
+    setIsUnbanInfoVisible(true);
   };
 
   return (
@@ -88,6 +94,40 @@ export default function Footer() {
             <h2 className="text-2xl font-bold mb-4">
               Mit was benötigst du Hilfe?
             </h2>
+            <div className="space-y-4">
+              <button
+                onClick={() =>
+                  (window.location.href = "https://discord.gg/YkSVFZw9nv")
+                }
+                className="block w-full text-left px-4 py-2 bg-primary text-black rounded-lg"
+              >
+                Ich komme nicht auf dem Server!
+              </button>
+              <button
+                onClick={showUnbanInfo}
+                className="block w-full text-left px-4 py-2 bg-primary text-black rounded-lg"
+              >
+                Ich will einen Entbannungsantrag stellen!
+              </button>
+              {isUnbanInfoVisible && (
+                <p className="mt-2 text-white">
+                  Du kannst einen Entbannungsantrag im Discord oder über die
+                  E-Mail{" "}
+                  <a href="mailto:info@zacklack.de" className="underline">
+                    info@zacklack.de
+                  </a>{" "}
+                  stellen.
+                </p>
+              )}
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:info@zacklack.de")
+                }
+                className="block w-full text-left px-4 py-2 bg-primary text-black rounded-lg"
+              >
+                Ich habe ein anderweitiges Problem!
+              </button>
+            </div>
             <button
               onClick={toggleHelpModal}
               className="mt-4 px-4 py-2 bg-primary text-black rounded-lg"
