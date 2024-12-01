@@ -34,23 +34,23 @@ const images = [
     alt: "Bild 6",
   },
   {
-    url: "https://imgur.com/kMDjvCj.jpg",
+    url: "https://i.imgur.com/kMDjvCj.jpg",
     alt: "Bild 7",
   },
   {
-    url: "https://imgur.com/cmK1cbN.jpg",
+    url: "https://i.imgur.com/cmK1cbN.jpg",
     alt: "Bild 8",
   },
   {
-    url: "https://imgur.com/TNCNjDe.jpg",
+    url: "https://i.imgur.com/TNCNjDe.jpg",
     alt: "Bild 9",
   },
   {
-    url: "https://imgur.com/QlQhmaY.jpg",
+    url: "https://i.imgur.com/QlQhmaY.jpg",
     alt: "Bild 10",
   },
   {
-    url: "https://imgur.com/iCBuhg4.jpg",
+    url: "https://i.imgur.com/iCBuhg4.jpg",
     alt: "Bild 11",
   },
 ];
