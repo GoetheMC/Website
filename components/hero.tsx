@@ -11,47 +11,47 @@ import GoetheLogo from "@/public/Goethe Logo.webp";
 const images = [
   {
     url: "https://i.imgur.com/ZuoZsda.jpg",
-    alt: "Muss noch was hinzugefügt werden",
+    alt: "Bild 1",
   },
   {
     url: "https://i.imgur.com/ktjUqfq.jpg",
-    alt: "Muss noch was hinzugefügt werden",
+    alt: "Bild 2",
   },
   {
     url: "https://i.imgur.com/3iVgjHt.jpg",
-    alt: "Muss noch was hinzugefügt werden",
+    alt: "Bild 3",
   },
   {
     url: "https://i.imgur.com/KNrfl6T.jpg",
-    alt: "Muss noch was hinzugefügt werden",
+    alt: "Bild 4",
   },
   {
     url: "https://i.imgur.com/V5F6iGj.jpg",
-    alt: "Muss noch was hinzugefügt werden",
+    alt: "Bild 5",
   },
   {
     url: "https://i.imgur.com/2UFjaDm.jpg",
-    alt: "Muss noch was hinzugefügt werden",
+    alt: "Bild 6",
   },
   {
     url: "https://imgur.com/kMDjvCj.jpg",
-    alt: "New Image 1",
+    alt: "Bild 7",
   },
   {
     url: "https://imgur.com/cmK1cbN.jpg",
-    alt: "New Image 2",
+    alt: "Bild 8",
   },
   {
     url: "https://imgur.com/TNCNjDe.jpg",
-    alt: "New Image 3",
+    alt: "Bild 9",
   },
   {
     url: "https://imgur.com/QlQhmaY.jpg",
-    alt: "New Image 4",
+    alt: "Bild 10",
   },
   {
     url: "https://imgur.com/iCBuhg4.jpg",
-    alt: "New Image 5",
+    alt: "Bild 11",
   },
 ];
 
